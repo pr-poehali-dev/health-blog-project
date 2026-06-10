@@ -1,28 +1,28 @@
 
+import { useState } from "react";
 import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
+import Navbar from "@/components/Navbar";
+import HomePage from "@/components/HomePage";
+import GalleryPage from "@/components/GalleryPage";
+import ArticlesPage from "@/components/ArticlesPage";
 
-const queryClient = new QueryClient();
+type Page = "home" | "gallery" | "articles";
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
+const App = () => {
+  const [currentPage, setCurrentPage] = useState<Page>("home");
+
+  return (
     <TooltipProvider>
       <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <div className="min-h-screen bg-background">
+        <Navbar currentPage={currentPage} onNavigate={setCurrentPage} />
+        {currentPage === "home" && <HomePage onNavigate={setCurrentPage} />}
+        {currentPage === "gallery" && <GalleryPage />}
+        {currentPage === "articles" && <ArticlesPage />}
+      </div>
     </TooltipProvider>
-  </QueryClientProvider>
-);
+  );
+};
 
 export default App;
