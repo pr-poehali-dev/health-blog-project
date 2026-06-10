@@ -5,55 +5,55 @@ const images = [
   {
     id: 1,
     src: "https://cdn.poehali.dev/projects/d510431e-4592-4bdc-b06a-c6d2b513f001/files/a6b521d2-4173-48dd-a2b6-5be693cd2f02.jpg",
-    title: "Здоровое питание",
-    category: "Питание",
-    desc: "Свежие овощи и зелень — основа натурального рациона",
+    title: "Alimentație sănătoasă",
+    category: "Nutriție",
+    desc: "Legume proaspete și verdețuri — baza unui regim alimentar natural",
   },
   {
     id: 2,
     src: "https://cdn.poehali.dev/projects/d510431e-4592-4bdc-b06a-c6d2b513f001/files/07b04f58-234c-4ba9-b0ff-949f189d7484.jpg",
-    title: "Прогулки в природе",
-    category: "Движение",
-    desc: "Утренние прогулки босиком по лесной тропе",
+    title: "Plimbări în natură",
+    category: "Mișcare",
+    desc: "Plimbări de dimineață desculț pe poteca din pădure",
   },
   {
     id: 3,
     src: "https://cdn.poehali.dev/projects/d510431e-4592-4bdc-b06a-c6d2b513f001/files/960f4eee-5c83-46a5-a0a6-e93f43ffdc71.jpg",
-    title: "Утренняя йога",
-    category: "Движение",
-    desc: "Медитация и йога для гармонии тела и ума",
+    title: "Yoga de dimineață",
+    category: "Mișcare",
+    desc: "Meditație și yoga pentru armonia corpului și minții",
   },
   {
     id: 4,
     src: "https://cdn.poehali.dev/projects/d510431e-4592-4bdc-b06a-c6d2b513f001/files/a6b521d2-4173-48dd-a2b6-5be693cd2f02.jpg",
-    title: "Зелёные смузи",
-    category: "Питание",
-    desc: "Витаминные смузи для энергии с утра",
+    title: "Smoothie-uri verzi",
+    category: "Nutriție",
+    desc: "Smoothie-uri vitaminizate pentru energie dimineața",
   },
   {
     id: 5,
     src: "https://cdn.poehali.dev/projects/d510431e-4592-4bdc-b06a-c6d2b513f001/files/07b04f58-234c-4ba9-b0ff-949f189d7484.jpg",
-    title: "Лесные прогулки",
-    category: "Природа",
-    desc: "Лес исцеляет — японская практика синрин-йоку",
+    title: "Plimbări în pădure",
+    category: "Natură",
+    desc: "Pădurea vindecă — practica japoneză shinrin-yoku",
   },
   {
     id: 6,
     src: "https://cdn.poehali.dev/projects/d510431e-4592-4bdc-b06a-c6d2b513f001/files/960f4eee-5c83-46a5-a0a6-e93f43ffdc71.jpg",
-    title: "Осознанность",
-    category: "Психология",
-    desc: "Практики осознанности снижают стресс и нормализуют вес",
+    title: "Conștientizare",
+    category: "Psihologie",
+    desc: "Practicile de mindfulness reduc stresul și normalizează greutatea",
   },
 ];
 
-const categories = ["Все", "Питание", "Движение", "Природа", "Психология"];
+const categories = ["Toate", "Nutriție", "Mișcare", "Natură", "Psihologie"];
 
 export default function GalleryPage() {
-  const [activeCategory, setActiveCategory] = useState("Все");
+  const [activeCategory, setActiveCategory] = useState("Toate");
   const [lightbox, setLightbox] = useState<(typeof images)[0] | null>(null);
 
   const filtered =
-    activeCategory === "Все"
+    activeCategory === "Toate"
       ? images
       : images.filter((img) => img.category === activeCategory);
 
@@ -62,11 +62,11 @@ export default function GalleryPage() {
       {/* Header */}
       <section className="bg-gradient-to-br from-[hsl(var(--green-deep))] to-[hsl(var(--green-mid))] text-white py-16 text-center">
         <p className="font-body text-white/60 uppercase tracking-widest text-xs mb-3">
-          Визуальное вдохновение
+          Inspirație vizuală
         </p>
-        <h1 className="font-display text-4xl md:text-5xl font-semibold mb-4">Галерея</h1>
+        <h1 className="font-display text-4xl md:text-5xl font-semibold mb-4">Galerie</h1>
         <p className="font-body text-white/75 max-w-md mx-auto text-base">
-          Образы здоровой и гармоничной жизни в единстве с природой
+          Imagini ale unei vieți sănătoase și armonioase în unitate cu natura
         </p>
       </section>
 
@@ -163,8 +163,8 @@ export default function GalleryPage() {
       {/* Footer */}
       <footer className="bg-[hsl(var(--bark))] text-white/70 py-8">
         <div className="container mx-auto px-6 text-center">
-          <p className="font-display text-lg text-white mb-1">🌿 ЗдравоБлог</p>
-          <p className="font-body text-xs">© 2026 · Всё о здоровье и гармоничной жизни</p>
+          <p className="font-display text-lg text-white mb-1">🌿 SănătateaBlog</p>
+          <p className="font-body text-xs">© 2026 · Totul despre sănătate și viață armonioasă</p>
         </div>
       </footer>
     </main>

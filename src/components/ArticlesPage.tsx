@@ -4,94 +4,94 @@ import Icon from "@/components/ui/icon";
 const articles = [
   {
     id: 1,
-    category: "Питание",
-    title: "Как начать правильно питаться без стресса",
+    category: "Nutriție",
+    title: "Cum să mănânci sănătos fără stres",
     excerpt:
-      "Простые принципы здорового рациона, которые легко встроить в повседневную жизнь без жёстких ограничений и подсчёта калорий.",
-    date: "5 июня 2026",
-    readTime: "4 мин",
+      "Principii simple ale unui regim alimentar sănătos, ușor de integrat în viața de zi cu zi, fără restricții dure și fără numărarea caloriilor.",
+    date: "5 iunie 2026",
+    readTime: "4 min",
     emoji: "🥗",
   },
   {
     id: 2,
-    category: "Движение",
-    title: "Прогулки как лучшее средство для похудения",
+    category: "Mișcare",
+    title: "Plimbările — cel mai bun remediu pentru slăbit",
     excerpt:
-      "Почему ходьба работает лучше интенсивных тренировок и как превратить её в приятную ежедневную привычку.",
-    date: "1 июня 2026",
-    readTime: "5 мин",
+      "De ce mersul pe jos funcționează mai bine decât antrenamentele intense și cum să îl transformi într-un obicei zilnic plăcut.",
+    date: "1 iunie 2026",
+    readTime: "5 min",
     emoji: "🚶‍♀️",
   },
   {
     id: 3,
-    category: "Психология",
-    title: "Пищевые привычки: как изменить отношение к еде",
+    category: "Psihologie",
+    title: "Obiceiuri alimentare: cum să-ți schimbi relația cu mâncarea",
     excerpt:
-      "Разбираем механизмы эмоционального переедания и учимся слышать сигналы своего тела.",
-    date: "28 мая 2026",
-    readTime: "6 мин",
+      "Analizăm mecanismele supraalimentării emoționale și învățăm să ascultăm semnalele corpului nostru.",
+    date: "28 mai 2026",
+    readTime: "6 min",
     emoji: "🧠",
   },
   {
     id: 4,
-    category: "Детокс",
-    title: "Мягкое очищение организма весной",
+    category: "Detox",
+    title: "Curățare blândă a organismului primăvara",
     excerpt:
-      "Как поддержать организм в период сезонных перемен с помощью натуральных продуктов и простых ритуалов.",
-    date: "20 мая 2026",
-    readTime: "5 мин",
+      "Cum să îți susții corpul în perioadele de schimbare sezonieră cu produse naturale și ritualuri simple.",
+    date: "20 mai 2026",
+    readTime: "5 min",
     emoji: "🌸",
   },
   {
     id: 5,
-    category: "Сон",
-    title: "Почему сон — лучшее средство для похудения",
+    category: "Somn",
+    title: "De ce somnul este cel mai bun remediu pentru slăbit",
     excerpt:
-      "Связь между качеством сна, гормонами аппетита и лишним весом. Как наладить режим за 2 недели.",
-    date: "15 мая 2026",
-    readTime: "7 мин",
+      "Legătura dintre calitatea somnului, hormonii apetitului și kilogramele în plus. Cum să îți reglezi programul în 2 săptămâni.",
+    date: "15 mai 2026",
+    readTime: "7 min",
     emoji: "🌙",
   },
   {
     id: 6,
-    category: "Рецепты",
-    title: "5 зелёных смузи для бодрости утром",
+    category: "Rețete",
+    title: "5 smoothie-uri verzi pentru energie dimineața",
     excerpt:
-      "Быстрые и вкусные рецепты из доступных продуктов, которые зарядят энергией на весь день.",
-    date: "10 мая 2026",
-    readTime: "3 мин",
+      "Rețete rapide și delicioase din produse accesibile, care îți vor oferi energie pentru toată ziua.",
+    date: "10 mai 2026",
+    readTime: "3 min",
     emoji: "🥤",
   },
   {
     id: 7,
-    category: "Питание",
-    title: "Интервальное голодание: мифы и реальность",
+    category: "Nutriție",
+    title: "Postul intermitent: mituri și realitate",
     excerpt:
-      "Разбираем популярные схемы 16/8 и 5:2 — кому подходит, кому противопоказано и как начать.",
-    date: "5 мая 2026",
-    readTime: "8 мин",
+      "Analizăm schemele populare 16/8 și 5:2 — cui i se potrivesc, cui sunt contraindicate și cum să începi.",
+    date: "5 mai 2026",
+    readTime: "8 min",
     emoji: "⏰",
   },
   {
     id: 8,
-    category: "Движение",
-    title: "Йога для начинающих: 15 минут в день",
+    category: "Mișcare",
+    title: "Yoga pentru începători: 15 minute pe zi",
     excerpt:
-      "Комплекс простых асан для улучшения гибкости, осанки и снижения уровня стресса.",
-    date: "1 мая 2026",
-    readTime: "4 мин",
+      "Un complex de asane simple pentru îmbunătățirea flexibilității, posturii și reducerea nivelului de stres.",
+    date: "1 mai 2026",
+    readTime: "4 min",
     emoji: "🧘‍♀️",
   },
 ];
 
-const categories = ["Все", "Питание", "Движение", "Психология", "Детокс", "Сон", "Рецепты"];
+const categories = ["Toate", "Nutriție", "Mișcare", "Psihologie", "Detox", "Somn", "Rețete"];
 
 export default function ArticlesPage() {
-  const [activeCategory, setActiveCategory] = useState("Все");
+  const [activeCategory, setActiveCategory] = useState("Toate");
   const [search, setSearch] = useState("");
 
   const filtered = articles.filter((a) => {
-    const matchCat = activeCategory === "Все" || a.category === activeCategory;
+    const matchCat = activeCategory === "Toate" || a.category === activeCategory;
     const matchSearch =
       search === "" ||
       a.title.toLowerCase().includes(search.toLowerCase()) ||
@@ -104,11 +104,11 @@ export default function ArticlesPage() {
       {/* Header */}
       <section className="bg-gradient-to-br from-[hsl(var(--green-deep))] to-[hsl(var(--green-mid))] text-white py-16 text-center">
         <p className="font-body text-white/60 uppercase tracking-widest text-xs mb-3">
-          Блог
+          Blog
         </p>
-        <h1 className="font-display text-4xl md:text-5xl font-semibold mb-4">Статьи</h1>
+        <h1 className="font-display text-4xl md:text-5xl font-semibold mb-4">Articole</h1>
         <p className="font-body text-white/75 max-w-md mx-auto text-base">
-          Практичные советы о питании, движении и здоровом образе жизни
+          Sfaturi practice despre nutriție, mișcare și un stil de viață sănătos
         </p>
       </section>
 
@@ -124,7 +124,7 @@ export default function ArticlesPage() {
             />
             <input
               type="text"
-              placeholder="Поиск статей..."
+              placeholder="Caută articole..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               className="w-full pl-9 pr-4 py-2 bg-muted border border-border rounded-full text-sm font-body outline-none focus:border-primary transition-colors"
@@ -154,7 +154,7 @@ export default function ArticlesPage() {
         {filtered.length === 0 ? (
           <div className="text-center py-20 text-muted-foreground font-body">
             <div className="text-5xl mb-4">🔍</div>
-            <p>Статьи не найдены. Попробуйте другой запрос.</p>
+            <p>Articolele nu au fost găsite. Încearcă altă căutare.</p>
           </div>
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -194,8 +194,8 @@ export default function ArticlesPage() {
       {/* Footer */}
       <footer className="bg-[hsl(var(--bark))] text-white/70 py-8">
         <div className="container mx-auto px-6 text-center">
-          <p className="font-display text-lg text-white mb-1">🌿 ЗдравоБлог</p>
-          <p className="font-body text-xs">© 2026 · Всё о здоровье и гармоничной жизни</p>
+          <p className="font-display text-lg text-white mb-1">🌿 SănătateaBlog</p>
+          <p className="font-body text-xs">© 2026 · Totul despre sănătate și viață armonioasă</p>
         </div>
       </footer>
     </main>

@@ -9,9 +9,9 @@ interface NavbarProps {
 }
 
 const navItems: { id: Page; label: string }[] = [
-  { id: "home", label: "Главная" },
-  { id: "gallery", label: "Галерея" },
-  { id: "articles", label: "Статьи" },
+  { id: "home", label: "Acasă" },
+  { id: "gallery", label: "Galerie" },
+  { id: "articles", label: "Articole" },
 ];
 
 export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
@@ -26,7 +26,7 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
         >
           <span className="text-2xl animate-leaf inline-block">🌿</span>
           <span className="font-display text-xl font-semibold text-foreground tracking-wide">
-            Живи в гармонии
+            Trăiește în armonie
           </span>
         </button>
 
